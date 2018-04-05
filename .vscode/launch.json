@@ -1,0 +1,58 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "FFMPEG - Concat individual files",
+      "type": "python",
+      "request": "launch",
+      "pythonPath": "${config:python.pythonPath}",
+      "program": "${workspaceFolder}/ffmpeg.py",
+      "args": [
+        "concat",
+        "-i",
+        "D:/motorcycle/040318/GOPR9224.MP4",
+        "D:/motorcycle/040318/GP019224.MP4",
+        "D:/motorcycle/040318/GP029224.MP4",
+        "D:/motorcycle/040318/GP039224.MP4",
+        "D:/motorcycle/040318/GP049224.MP4",
+        "-o",
+        "${workspaceFolder}/out/GOPR9224_concat.mp4",
+        "--ffmpeg-path",
+        "C:\\ffmpeg\\bin\\ffmpeg.exe",
+        "--lossless"
+      ],
+      "cwd": "${workspaceFolder}",
+      "env": {},
+      "envFile": "${workspaceFolder}/.env",
+      "debugOptions": [
+        "RedirectOutput"
+      ]
+    },
+    {
+      "name": "FFMPEG - Concat files in folder",
+      "type": "python",
+      "request": "launch",
+      "pythonPath": "${config:python.pythonPath}",
+      "program": "${workspaceFolder}/ffmpeg.py",
+      "args": [
+        "concat",
+        "-d",
+        "D:/motorcycle/040318",
+        "-o",
+        "${workspaceFolder}/out/GOPR9224_concat.mp4",
+        "--ffmpeg-path",
+        "C:\\ffmpeg\\bin\\ffmpeg.exe",
+        "--lossless"
+      ],
+      "cwd": "${workspaceFolder}",
+      "env": {},
+      "envFile": "${workspaceFolder}/.env",
+      "debugOptions": [
+        "RedirectOutput"
+      ]
+    }
+  ]
+}
